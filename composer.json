@@ -1,0 +1,37 @@
+{
+    "name": "wishgranter-project/youtube-probe",
+    "description": "Probe YouTube for music",
+    "type": "library",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/adinan-cenci/psr-18"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/adinan-cenci/generic-rest-api"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/wishgranter-project/music-probe"
+        }
+    ],
+    "authors": [
+        {
+            "name": "Adinan Cenci",
+            "email": "adinancenci@protonmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "WishgranterProject\\YouTubeProbe\\": "src/"
+        }
+    },
+    "require": {
+        "adinan-cenci/file-cache": "^2.0",
+        "adinan-cenci/generic-rest-api": "^2.0",
+        "wishgranter-project/music-probe": "*"
+    }
+}
