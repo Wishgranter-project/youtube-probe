@@ -20,7 +20,9 @@ $probe = new YouTubeProbe($api);
 
 <br><br>
 
-## Describe what we want
+## Describe the music
+
+We then describe the music we are looking for.
 
 ```php
 use WishgranterProject\MusicProbe\Description;
