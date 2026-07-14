@@ -24,7 +24,7 @@ class YouTubeApi extends ApiBase
      * @param array $options
      *   Implementation specific.
      * @param null|Psr\SimpleCache\CacheInterface $cache
-     *   Cache, opcional.
+     *   Cache, optional.
      * @param null|Psr\Http\Client\ClientInterface $httpClient
      *   Optional, the class will use a generic library if not informed.
      * @param Psr\Http\Message\RequestFactoryInterface $requestFactory
