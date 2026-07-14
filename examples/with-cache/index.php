@@ -131,7 +131,7 @@ foreach ($results as $result) {
         '</td>
         <td>' .
             '<h2>' . $result->title . '</h2>' .
-            ( $result->artist ? $result->artist . '<br>' : '' ).
+            ( $result->artist ? implode(', ', $result->artist) . '<br>' : '' ).
             $result->description . '<br>' .
             $result->src .
         '</td>';

@@ -28,16 +28,16 @@ $description = Description::createFromArray([
     'soundtrack' => 'Fallout New Vegas',
 ]);
 
-$results = $youTube->search($description);
+$resources = $youTube->search($description);
 
-foreach ($results as $result) {
+foreach ($resources as $resource) {
     echo "<pre>
-    Id: $result->id
-    Probe Id: $result->probeId
-    SourceId: $result->sourceId
-    Title: $result->title
-    Description: $result->description
-    Thumbnail: $result->thumbnail
-    Href: $result->href" .
+    Id: $resource->id
+    Probe Id: $resource->probeId
+    SourceId: $resource->sourceId
+    Title: $resource->title
+    Description: $resource->description
+    Thumbnail: $resource->thumbnail
+    Href: $resource->href" .
     '</pre>';
 }
