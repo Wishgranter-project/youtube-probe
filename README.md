@@ -6,7 +6,7 @@ Implementing the [wishgranter-project/music-probe](https://github.com/Wishgrante
 
 <br><br>
 
-## How to use ot
+## How to use it
 
 First we instantiate the probe.
 
