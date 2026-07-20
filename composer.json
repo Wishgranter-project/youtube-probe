@@ -23,7 +23,7 @@
             "email": "adinancenci@protonmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "WishgranterProject\\YouTubeProbe\\": "src/"
@@ -32,6 +32,6 @@
     "require": {
         "adinan-cenci/file-cache": "^2.0",
         "adinan-cenci/generic-rest-api": "^2.0",
-        "wishgranter-project/music-probe": "*"
+        "wishgranter-project/music-probe": "^1.0"
     }
 }
