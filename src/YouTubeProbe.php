@@ -39,22 +39,29 @@ class YouTubeProbe extends ProbeAbstract implements ProbeInterface
      */
     public function buildQuery(DescriptionInterface $description): string
     {
+        /**
+         * See https://developers.google.com/youtube/v3/docs/search/list .
+         *
+         * In my experience, the boolean operator ( -this -that ) only makes
+         * the results poorer, so it is best avoided.
+         */
+
         $parts = [];
 
         if (isset($description->title)) {
-            $parts[] = $description->title;
+            $parts[] = '"' . $description->title . '"';
         }
 
-        // It is more likely for the music to be known for the soundtrack than
-        // the artist, so we give it precedence.
         if (!empty($description->soundtrack)) {
-            $parts[] = $description->soundtrack[0];
-        } elseif (!empty($description->artist)) {
-            $parts[] = $description->artist[0];
+            $parts[] = implode(' ', $description->soundtrack);
         }
 
-        if ($description->genre) {
-            // ignores genre.
+        if (!empty($description->artist)) {
+            $parts[] = implode(' ', $description->artist);
+        }
+
+        if (!empty($description->featuring)) {
+            $parts[] = implode(' ', $description->featuring);
         }
 
         $query = implode(' ', $parts);

@@ -53,6 +53,9 @@ class YouTubeApi extends ApiBase
         // pageToken ( page )
 
         $parameters = [
+            'maxResults'      => 25,
+            'order'           => 'relevance',
+            'safeSearch'      => 'none',
             'type'            => 'video',
             'part'            => 'snippet',
             'videoEmbeddable' => 'true',
