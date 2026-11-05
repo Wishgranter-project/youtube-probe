@@ -48,8 +48,8 @@ class YouTubeProbe extends ProbeAbstract implements ProbeInterface
 
         $parts = [];
 
-        if (isset($description->title)) {
-            $parts[] = '"' . $description->title . '"';
+        if (!empty($description->title)) {
+            $parts[] = '"' . str_replace('"', '', $description->title) . '"';
         }
 
         if (!empty($description->soundtrack)) {
