@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "637ce9067ff3a7129c661877a46bd4a0",
+    "content-hash": "890b7292ef82212d2b719e44d51ac98c",
     "packages": [
         {
             "name": "adinan-cenci/file-cache",
@@ -102,7 +102,7 @@
         },
         {
             "name": "adinan-cenci/psr-17",
-            "version": "dev-master",
+            "version": "v2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/adinan-cenci/psr-17.git",
@@ -121,7 +121,6 @@
             "require-dev": {
                 "phpunit/phpunit": "9.5.x-dev"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -141,7 +140,7 @@
             ],
             "support": {
                 "issues": "https://github.com/adinan-cenci/psr-17/issues",
-                "source": "https://github.com/adinan-cenci/psr-17/tree/master"
+                "source": "https://github.com/adinan-cenci/psr-17/tree/v2.1.3"
             },
             "time": "2026-03-18T20:42:03+00:00"
         },
@@ -197,7 +196,7 @@
         },
         {
             "name": "adinan-cenci/psr-7",
-            "version": "dev-master",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/adinan-cenci/psr-7.git",
@@ -216,7 +215,6 @@
                 "guzzlehttp/psr7": "^2.7",
                 "php-http/psr7-integration-tests": "^1.4"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -236,13 +234,13 @@
             ],
             "support": {
                 "issues": "https://github.com/adinan-cenci/psr-7/issues",
-                "source": "https://github.com/adinan-cenci/psr-7/tree/master"
+                "source": "https://github.com/adinan-cenci/psr-7/tree/v3.0.0"
             },
             "time": "2026-03-16T21:46:35+00:00"
         },
         {
             "name": "psr/http-client",
-            "version": "dev-master",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-client.git",
@@ -258,7 +256,6 @@
                 "php": "^7.0 || ^8.0",
                 "psr/http-message": "^1.0 || ^2.0"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -350,7 +347,7 @@
         },
         {
             "name": "psr/http-message",
-            "version": "dev-master",
+            "version": "2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-message.git",
@@ -365,7 +362,6 @@
             "require": {
                 "php": "^7.2 || ^8.0"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -455,24 +451,32 @@
         },
         {
             "name": "wishgranter-project/music-probe",
-            "version": "dev-master",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Wishgranter-project/music-probe.git",
-                "reference": "38ae712ffa6176bffd6897bf756ba65a8988ffbd"
+                "reference": "f5b3539fca1514685c877fdf8f0eb7595f2314a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Wishgranter-project/music-probe/zipball/38ae712ffa6176bffd6897bf756ba65a8988ffbd",
-                "reference": "38ae712ffa6176bffd6897bf756ba65a8988ffbd",
+                "url": "https://api.github.com/repos/Wishgranter-project/music-probe/zipball/f5b3539fca1514685c877fdf8f0eb7595f2314a8",
+                "reference": "f5b3539fca1514685c877fdf8f0eb7595f2314a8",
                 "shasum": ""
             },
-            "default-branch": true,
+            "require-dev": {
+                "phpunit/phpunit": "^12.5"
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "WishgranterProject\\MusicProbe\\": "src/"
+                    "WishgranterProject\\MusicProbe\\": "src/",
+                    "WishgranterProject\\MusicProbe\\Tests\\": "tests/"
                 }
+            },
+            "scripts": {
+                "unit-tests": [
+                    "./vendor/bin/phpunit tests"
+                ]
             },
             "license": [
                 "MIT"
@@ -485,15 +489,15 @@
             ],
             "description": "A standard interface for searching and retrieving music from different sources",
             "support": {
-                "source": "https://github.com/Wishgranter-project/music-probe/tree/master",
+                "source": "https://github.com/Wishgranter-project/music-probe/tree/v1.0.1",
                 "issues": "https://github.com/Wishgranter-project/music-probe/issues"
             },
-            "time": "2026-07-06T16:43:50+00:00"
+            "time": "2026-11-05T22:45:51+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
