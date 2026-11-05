@@ -94,7 +94,8 @@ class YouTubeProbe extends ProbeAbstract implements ProbeInterface
                 'id'          => $item->id->videoId,
                 'title'       => htmlspecialchars_decode($item->snippet->title),
                 'description' => htmlspecialchars_decode($item->snippet->description),
-                'thumbnail'   => $item->snippet->thumbnails->default->url,
+                'thumbnail'   => $item->snippet->thumbnails?->medium?->url ?:
+                    $item->snippet->thumbnails->default->url,
                 'href'        => 'https://youtube.com/watch?v=' . $item->id->videoId,
             ]);
         }
