@@ -1,6 +1,6 @@
 <?php
 
-namespace WishgranterProject\YoutubeProbe;
+namespace WishgranterProject\YouTubeProbe;
 
 use WishgranterProject\MusicProbe\DescriptionInterface;
 use WishgranterProject\MusicProbe\Resource;

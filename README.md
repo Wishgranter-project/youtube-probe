@@ -12,7 +12,7 @@ First we instantiate the probe.
 
 ```php
 use WishgranterProject\YouTubeProbe\YouTubeApi;
-use WishgranterProject\YoutubeProbe\YouTubeProbe;
+use WishgranterProject\YouTubeProbe\YouTubeProbe;
 
 $api = new YouTubeApi('your-api-key-goes-here');
 $probe = new YouTubeProbe($api);
