@@ -79,6 +79,10 @@ class YouTubeProbe extends ProbeAbstract implements ProbeInterface
         $query = $this->buildQuery($description);
         $data  = $this->youTubeApi->search($query);
 
+        if (!$data || empty($data->items)) {
+            return [];
+        }
+
         foreach ($data->items as $item) {
             if ($item->id->kind != 'youtube#video') {
                 continue;
