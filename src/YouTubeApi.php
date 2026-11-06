@@ -46,6 +46,7 @@ class YouTubeApi extends ApiBase implements YouTubeApiInterface
      */
     public function search(string $query): ?\stdClass
     {
+        // https://developers.google.com/youtube/data/reference/rest/v3/search/list
         // maxResults ( itens per page ).
         // pageToken ( page )
 
@@ -57,6 +58,7 @@ class YouTubeApi extends ApiBase implements YouTubeApiInterface
             'part'            => 'snippet',
             'videoEmbeddable' => 'true',
             'videoSyndicated' => 'true',
+            'videoCategoryId' => 10,
             'q'               => $query,
         ];
 
