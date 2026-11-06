@@ -7,7 +7,7 @@ use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\SimpleCache\CacheInterface;
 
-class YouTubeApi extends ApiBase
+class YouTubeApi extends ApiBase implements YouTubeApiInterface
 {
     /**
      * The YouTube api key.
@@ -42,10 +42,7 @@ class YouTubeApi extends ApiBase
     }
 
     /**
-     * @param string $query
-     *   A query for our search.
-     *
-     * @return \stdClass|null
+     * {@inheritdoc}
      */
     public function search(string $query): ?\stdClass
     {

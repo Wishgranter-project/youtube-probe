@@ -12,9 +12,9 @@ class YouTubeProbe extends ProbeAbstract implements ProbeInterface
     /**
      * Constructor.
      *
-     * @param WishgranterProject\YouTubeProbe\YouTubeApi $youTubeApi
+     * @param WishgranterProject\YouTubeProbe\YouTubeApiInterface $youTubeApi
      */
-    public function __construct(protected YouTubeApi $youTubeApi)
+    public function __construct(protected YouTubeApiInterface $youTubeApi)
     {
     }
 
