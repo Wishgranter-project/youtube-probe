@@ -73,6 +73,8 @@ class YouTubeApi extends ApiBase implements YouTubeApiInterface
      */
     protected function getFullUrl(string $uri): string
     {
-        return 'https://youtube.googleapis.com/youtube/v3/' . $uri . '&key=' . $this->apiKey;
+        return 'https://youtube.googleapis.com/youtube/v3/' . $uri .
+        (substr_count($uri, '?') ? '&' : '?') .
+        'key=' . $this->apiKey;
     }
 }
