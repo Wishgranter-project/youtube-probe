@@ -68,7 +68,6 @@ security, `P1` = robustness/design, `P2` = packaging/housekeeping.
         album/genre/cover behaviour.
   - [ ] `search()`: inject a stub PSR-18 client into `YouTubeApi` and assert
         result mapping, filtering of non-video entries, and empty responses.
-- [ ] **Add CI** (GitHub Actions) running `php -l` and the test suite.
 - [X] **Consider renaming `CHANGESLOG.md` to `CHANGELOG.md`** and fixing the
       heading levels (`## Fixed` should be `### Fixed`); fix the "Dismembered"
       typo.
