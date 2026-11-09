@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WishgranterProject\YouTubeProbe;
 
 use WishgranterProject\MusicProbe\DescriptionInterface;

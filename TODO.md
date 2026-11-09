@@ -43,7 +43,7 @@ security, `P1` = robustness/design, `P2` = packaging/housekeeping.
       (`src/YouTubeApi.php:55-64`).
 - [X] **Stop returning raw `\stdClass`.** Map the API response to a small DTO or
       at least document the expected shape in the `search()` docblock.
-- [ ] **Add `declare(strict_types=1);`** to `src/` files for consistency with
+- [X] **Add `declare(strict_types=1);`** to `src/` files for consistency with
       the sibling `music-probe` package.
 
 ## P2 - Packaging and hygiene
