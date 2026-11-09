@@ -22,10 +22,6 @@ security, `P1` = robustness/design, `P2` = packaging/housekeeping.
         `He said "hi"` produces an invalid-looking query).
   - [X] Decide whether to include `album`, `genre`, and `cover`; they are
         currently ignored, and `album`/`cover` are strong disambiguators.
-- [ ] **Remove the XSS footgun.** `htmlspecialchars_decode()` on title and
-      description (`src/YouTubeProbe.php:91-92`) undoes escaping, and the
-      examples then echo results raw. Either keep entities in the library or
-      document that consumers must escape output.
 - [X] **Fix the `with-cache` example fields.** It reads `$result->source`
       (`examples/with-cache/index.php:132`); the property is `sourceId`.
       It also prints `$result->src`, which is always empty for YouTube.
@@ -45,10 +41,8 @@ security, `P1` = robustness/design, `P2` = packaging/housekeeping.
       (Music), optionally `contentDetails`/duration filtering, region/language,
       and make `maxResults` and `safeSearch` configurable rather than hardcoded
       (`src/YouTubeApi.php:55-64`).
-- [ ] **Stop returning raw `\stdClass`.** Map the API response to a small DTO or
+- [X] **Stop returning raw `\stdClass`.** Map the API response to a small DTO or
       at least document the expected shape in the `search()` docblock.
-- [ ] **Document error behaviour.** Note `@throws` for quota/rate-limit errors
-      and consider retry/backoff for 429 responses.
 - [ ] **Add `declare(strict_types=1);`** to `src/` files for consistency with
       the sibling `music-probe` package.
 

@@ -101,6 +101,7 @@ if (empty($title) || empty($artist)) {
     <li><a href="?genre=Power+Metal&artist=Hysterica&title=Breaking+the+walls">Breaking the walls - Hysterica</a></li>
     <li><a href="?genre=Metal&artist=Davester2296&title=Painful+Dreams&cover=Robert+Prince&soundtrack=D64D2">Painful Dreams - Davester2296</a></li>
     <li><a href="?artist=Gotye&featuring=The+Basics&title=Somebody+That+I+Used+To+Know">Somebody That I Used To Know - Gotye & The Basics</a></li>
+    <li><a href="?artist=Георгий+Абрамов&title=Море+шумит">Море шумит - Георгий Абрамов</a>
 </ul>
 <?php
 die();
