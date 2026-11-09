@@ -44,14 +44,13 @@ class YouTubeApi extends ApiBase implements YouTubeApiInterface
     /**
      * {@inheritdoc}
      */
-    public function search(string $query): ?\stdClass
+    public function search(string $query, int $itemsPerPage = 25, ?string $pageToken = null): ?\stdClass
     {
-        // https://developers.google.com/youtube/data/reference/rest/v3/search/list
-        // maxResults ( itens per page ).
-        // pageToken ( page )
+        // See https://developers.google.com/youtube/data/reference/rest/v3/search/list
 
         $parameters = [
             'maxResults'      => 25,
+            'pageToken'       => $pageToken,
             'order'           => 'relevance',
             'safeSearch'      => 'none',
             'type'            => 'video',

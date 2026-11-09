@@ -77,7 +77,8 @@ class YouTubeProbe extends ProbeAbstract implements ProbeInterface
         $resources = [];
 
         $query = $this->buildQuery($description);
-        $data  = $this->youTubeApi->search($query);
+        // Frankly I don't think it is worth search past the first page.
+        $data  = $this->youTubeApi->search($query, 25);
 
         if (!$data || empty($data->items)) {
             return [];

@@ -14,7 +14,7 @@ security, `P1` = robustness/design, `P2` = packaging/housekeeping.
 - [X] **Guard against empty/failed API responses.** `YouTubeProbe::search()`
       (`src/YouTubeProbe.php:82`) iterates `$data->items` without checking it,
       but `YouTubeApi::search()` can return `null`. Return `[]` early.
-- [ ] **Handle pagination.** Only the first page (25 results) is ever returned.
+- [X] **Handle pagination.** Only the first page (25 results) is ever returned.
       Expose `nextPageToken` support or document the limitation.
 - [X] **Harden `buildQuery()`** (`src/YouTubeProbe.php:51-65`):
   - [X] Do not emit `""` when the title is empty.
