@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.1] - 2026-09-22
 
-## Fixed
+### Fixed
 - Slight improvement in the query submitted to YouTube's API. It now includes
 all the performing artists + the featured artists as well.
 
