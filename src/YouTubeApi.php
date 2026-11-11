@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WishgranterProject\YouTubeProbe;
 
 use AdinanCenci\GenericRestApi\ApiBase;
@@ -7,7 +9,7 @@ use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\SimpleCache\CacheInterface;
 
-class YouTubeApi extends ApiBase
+class YouTubeApi extends ApiBase implements YouTubeApiInterface
 {
     /**
      * The YouTube api key.
@@ -42,24 +44,23 @@ class YouTubeApi extends ApiBase
     }
 
     /**
-     * @param string $query
-     *   A query for our search.
-     *
-     * @return \stdClass|null
+     * {@inheritdoc}
      */
-    public function search(string $query): ?\stdClass
+    public function search(string $query, int $itemsPerPage = 25, ?string $pageToken = null): ?\stdClass
     {
-        // maxResults ( itens per page ).
-        // pageToken ( page )
+        // See https://developers.google.com/youtube/data/reference/rest/v3/search/list
+        // for parameters and expected output.
 
         $parameters = [
             'maxResults'      => 25,
+            'pageToken'       => $pageToken,
             'order'           => 'relevance',
             'safeSearch'      => 'none',
             'type'            => 'video',
             'part'            => 'snippet',
             'videoEmbeddable' => 'true',
             'videoSyndicated' => 'true',
+            'videoCategoryId' => 10,
             'q'               => $query,
         ];
 
@@ -76,6 +77,8 @@ class YouTubeApi extends ApiBase
      */
     protected function getFullUrl(string $uri): string
     {
-        return 'https://youtube.googleapis.com/youtube/v3/' . $uri . '&key=' . $this->apiKey;
+        return 'https://youtube.googleapis.com/youtube/v3/' . $uri .
+        (substr_count($uri, '?') ? '&' : '?') .
+        'key=' . $this->apiKey;
     }
 }

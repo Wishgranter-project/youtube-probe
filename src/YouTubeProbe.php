@@ -1,6 +1,8 @@
 <?php
 
-namespace WishgranterProject\YoutubeProbe;
+declare(strict_types=1);
+
+namespace WishgranterProject\YouTubeProbe;
 
 use WishgranterProject\MusicProbe\DescriptionInterface;
 use WishgranterProject\MusicProbe\Resource;
@@ -12,9 +14,9 @@ class YouTubeProbe extends ProbeAbstract implements ProbeInterface
     /**
      * Constructor.
      *
-     * @param WishgranterProject\YouTubeProbe\YouTubeApi $youTubeApi
+     * @param WishgranterProject\YouTubeProbe\YouTubeApiInterface $youTubeApi
      */
-    public function __construct(protected YouTubeApi $youTubeApi)
+    public function __construct(protected YouTubeApiInterface $youTubeApi)
     {
     }
 
@@ -48,8 +50,8 @@ class YouTubeProbe extends ProbeAbstract implements ProbeInterface
 
         $parts = [];
 
-        if (isset($description->title)) {
-            $parts[] = '"' . $description->title . '"';
+        if (!empty($description->title)) {
+            $parts[] = '"' . str_replace('"', '', $description->title) . '"';
         }
 
         if (!empty($description->soundtrack)) {
@@ -77,7 +79,12 @@ class YouTubeProbe extends ProbeAbstract implements ProbeInterface
         $resources = [];
 
         $query = $this->buildQuery($description);
-        $data  = $this->youTubeApi->search($query);
+        // Frankly I don't think it is worth search past the first page.
+        $data  = $this->youTubeApi->search($query, 25);
+
+        if (!$data || empty($data->items)) {
+            return [];
+        }
 
         foreach ($data->items as $item) {
             if ($item->id->kind != 'youtube#video') {
@@ -90,7 +97,8 @@ class YouTubeProbe extends ProbeAbstract implements ProbeInterface
                 'id'          => $item->id->videoId,
                 'title'       => htmlspecialchars_decode($item->snippet->title),
                 'description' => htmlspecialchars_decode($item->snippet->description),
-                'thumbnail'   => $item->snippet->thumbnails->default->url,
+                'thumbnail'   => $item->snippet->thumbnails?->medium?->url ?:
+                    $item->snippet->thumbnails->default->url,
                 'href'        => 'https://youtube.com/watch?v=' . $item->id->videoId,
             ]);
         }

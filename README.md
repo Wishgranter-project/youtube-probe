@@ -1,6 +1,6 @@
 # YouTube probe
 
-A library to find music in on YouTube.
+A library to find music on YouTube.
 
 Implementing the [wishgranter-project/music-probe](https://github.com/Wishgranter-project/music-probe/) interface.
 
@@ -12,9 +12,9 @@ First we instantiate the probe.
 
 ```php
 use WishgranterProject\YouTubeProbe\YouTubeApi;
-use WishgranterProject\YoutubeProbe\YouTubeProbe;
+use WishgranterProject\YouTubeProbe\YouTubeProbe;
 
-$api = new YouTubeApi('your-api-key-goes-here');
+$api   = new YouTubeApi('your-api-key-goes-here');
 $probe = new YouTubeProbe($api);
 ```
 
