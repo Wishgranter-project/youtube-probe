@@ -26,12 +26,21 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "WishgranterProject\\YouTubeProbe\\": "src/"
+            "WishgranterProject\\YouTubeProbe\\": "src/",
+            "WishgranterProject\\YouTubeProbe\\Tests\\": "tests/"
         }
     },
     "require": {
         "adinan-cenci/file-cache": "^2.0",
         "adinan-cenci/generic-rest-api": "^2.0",
         "wishgranter-project/music-probe": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^13.4"
+    },
+    "scripts": {
+        "unit-tests": [
+            "./vendor/bin/phpunit tests"
+        ]
     }
 }
