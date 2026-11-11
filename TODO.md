@@ -52,20 +52,17 @@ security, `P1` = robustness/design, `P2` = packaging/housekeeping.
       the README casing a typo, but the actual source is the inconsistent part.
 - [ ] **Tighten `composer.json`**:
   - [ ] Add a `"php"` platform requirement (target 8.4).
-  - [ ] Declare directly used PSR packages (`psr/http-client`,
-        `psr/http-factory`, `psr/simple-cache`) instead of relying on
-        transitive dependencies.
   - [ ] Add `require-dev` with PHPUnit and a `unit-tests` script, matching the
         sibling Wishgranter projects.
-- [ ] **Write unit tests.**
-  - [ ] `buildQuery()`: empty title, quotes, artist/soundtrack/featuring,
+- [X] **Write unit tests.**
+  - [X] `buildQuery()`: empty title, quotes, artist/soundtrack/featuring,
         album/genre/cover behaviour.
-  - [ ] `search()`: inject a stub PSR-18 client into `YouTubeApi` and assert
+  - [X] `search()`: inject a stub PSR-18 client into `YouTubeApi` and assert
         result mapping, filtering of non-video entries, and empty responses.
 - [X] **Consider renaming `CHANGESLOG.md` to `CHANGELOG.md`** and fixing the
       heading levels (`## Fixed` should be `### Fixed`); fix the "Dismembered"
       typo.
-- [ ] **Drop the unused MariaDB container** from `.ddev/config.yaml`; the
+- [X] **Drop the unused MariaDB container** from `.ddev/config.yaml`; the
       library never touches a database.
 - [X] **Review whether `composer.lock` should be committed** (debatable for a
       library).
